@@ -13,16 +13,16 @@ class CreateNoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('note', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('user_id');
-            $table->strings('date');
-            $table->strings('contents');
-            $table->integer('strength');
-            $table->integer('condition');
-            $table->strings('task');
-            $table->strings('movie_url')->nullable();
-            $table->strings('next_theme');
+            $table->integer('user_id');
+            $table->dateTime('date');
+            $table->text('contents');
+            $table->string('strength');
+            $table->string('condition');
+            $table->string('task');
+            $table->string('movie_url')->nullable();
+            $table->string('next_theme');
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateNoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('note');
+        Schema::dropIfExists('notes');
     }
 }

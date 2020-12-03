@@ -11,4 +11,16 @@ class NoteController extends Controller
     {
         return view('admin.note.create');
     }
+    public function create()
+    {
+        return redirect('admin/note/create');
+    }
+    public function edit()
+    {
+        return view('admin.note.edit');
+    }
+    public function update()
+    {
+        return redirect('admin/note/edit');
+    }
 }

@@ -13,9 +13,9 @@ class ProfilePlayerTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
+        Schema::create('profile_players', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('user_id');
+            $table->integer('user_id');
             $table->string('team');
             $table->string('coach')->nullable();
             $table->string('position');
@@ -35,6 +35,6 @@ class ProfilePlayerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('profile_players');
     }
 }
