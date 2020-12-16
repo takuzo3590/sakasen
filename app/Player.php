@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profile_Player extends Model
+class Player extends Model
 {
     protected $guarded = array('id');
     public static $rules = array(
+        'face_photo' => 'required',
         'team' => 'required',
         'coach' => 'required',
         'position' => 'required',

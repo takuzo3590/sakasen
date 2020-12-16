@@ -1,0 +1,43 @@
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.l-header_area {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.l-header_gnavItem {
+  display: inline-block;
+  positon: relative;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  aligh-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.c-icon_require {
+  color: #0000FF;
+}
+
+.aaa {
+  display: inline-block;
+  margin: 20px;
+  font-size: 15px;
+}
+

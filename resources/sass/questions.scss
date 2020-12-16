@@ -1,0 +1,56 @@
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar-laravel {
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+.table-dark {
+  color: #fff;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #000;
+}
+
+
+.l-header_area{
+  margin:0 auto;
+  padding:0;
+  text-align:center;
+}
+
+.l-header_gnavItem{
+  display:inline-block;
+  positon:relative;
+  padding-right:15px;
+  margin-right:10px;
+}
+
+.question-list{
+  text-align:center;
+  display:flex;
+  aligh-items:center;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
+
+.c-icon_require{
+  color:#0000FF;
+}
+
+.chat-container{
+  padding:0;
+  background:#7494c0;
+  overflow:hidden;
+  margin:20px auto;
+  font-size:80%;
+}
