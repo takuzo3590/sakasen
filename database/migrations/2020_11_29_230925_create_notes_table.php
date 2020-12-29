@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNoteTable extends Migration
+class CreateNotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,7 @@ class CreateNoteTable extends Migration
             $table->string('strength');
             $table->string('condition');
             $table->string('task');
-            $table->string('movie_url')->nullable();
+            $table->string('movie')->nullable();
             $table->string('next_theme');
             $table->timestamps();
         });

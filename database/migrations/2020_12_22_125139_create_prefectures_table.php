@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnRoleUserTable extends Migration
+class CreatePrefecturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddColumnRoleUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-          $table->tinyInteger('role')->default(1)->after('password')->index('index_role')->comment('ロール');
+        Schema::create('prefectures', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('prefecture');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddColumnRoleUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-          $table->dropColumn('role');
-        });
+        Schema::dropIfExists('prefectures');
     }
 }

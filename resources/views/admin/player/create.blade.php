@@ -1,10 +1,10 @@
 @extends('layouts.players')
-@section('title','プロフィール作成画面')
+@section('title','選手プロフィール')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>プロフィール作成画面</h2>
+                <h2>選手プロフィール</h2>
                 <form action="{{ action('Admin\PlayerController@create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
@@ -14,18 +14,14 @@
                         </ul>
                     @endif
                     <div class="player-list-left">
-                         <th class="player-list-contents">
-                            <label for="name">顔写真</label>
-                            <input type="image">
-                        </th>
+                        <p>顔写真</p>
+                        <input type="file" name="face_photo" value=''>
                         <th class="player-list-contents">
                             <label for="name">氏名</label>
-                            <span class="c-icon_require">必須</span>
                             <input type="name">
                         </th>
                         <th class="player-list-contents">
                             <label for="e-mail">メールアドレス</label>
-                            <span class="c-icon_require">必須</span>
                             <input type="e-mail">
                         </th>
                         <th class="player-list-contents">
@@ -36,7 +32,12 @@
                          <th class="player-list-contents">
                             <label for="team">所属チーム</label>
                             <span class="c-icon_require">必須</span>
-                            <input type="team">
+                            <select type="text" class="form-control" name="team">                          
+                            @foreach(config('team') as $key => $score)
+                                <option value="{{ $score }}">{{ $score }}</option>
+                            @endforeach
+                            </select>
+                            <a href="{{ action('Admin\TeamController@add') }}" role="button" class="btn btn-primary">チーム名がない場合はこちらから登録</a>
                         </th>
                          <th class="player-list-contents">
                             <label for="coach">担当コーチ</label>
@@ -51,8 +52,10 @@
                     <div class="player-list-right">
                          <th class="player-list-contents">
                             <label for="dominant_foot">利き足</label>
-                            <span class="c-icon_require">必須</span>
-                            <input type="dominant_foot">
+                            <select>
+                                <option>右</option>
+                                <option>左</option>
+                            </select>
                         </th>
                          <th class="player-list-contents">
                             <label for="good_play">得意プレー</label>
@@ -69,9 +72,9 @@
                             <span class="c-icon_require">必須</span>
                             <input type="short_term_goal">
                         </th>
-                        <btn type="button" name="aaa" value="aaa">編集</btn>
-                        <btn type="button" name="aaa" value="aaa">保存</btn>
                     </div>
+                    <input type="submit" class="btn btn-primary" value="編集">
+                    <input type="submit" class="btn btn-primary" value="保存">
                 </form>
             </div>
         </div>

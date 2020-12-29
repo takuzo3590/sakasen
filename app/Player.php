@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     protected $guarded = array('id');
+    
     public static $rules = array(
         'face_photo' => 'required',
         'team' => 'required',
